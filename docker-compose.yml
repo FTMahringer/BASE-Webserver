@@ -20,6 +20,7 @@ services:
       context: ./docker/php
       dockerfile: Dockerfile
     container_name: ftm_php_fpm
+    hostname: ${APP_HOSTNAME}
     volumes:
       - ./htdocs:/var/www/html
     environment:
