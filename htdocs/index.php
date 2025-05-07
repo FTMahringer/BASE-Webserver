@@ -1,6 +1,8 @@
 <?php
 $dir = __DIR__;
-$folders = array_filter(glob($dir . '/*'), 'is_dir');
+$folders = array_filter(scandir($dir), function($item) use ($dir) {
+    return $item !== '.' && $item !== '..' && is_dir($dir . DIRECTORY_SEPARATOR . $item);
+});
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,10 +66,7 @@ $folders = array_filter(glob($dir . '/*'), 'is_dir');
     <h2>Available Projects</h2>
     <ul>
         <?php foreach ($folders as $folder): ?>
-            <?php $name = basename($folder); ?>
-            <?php if ($name !== '.' && $name !== '..' && $name !== 'public'): ?>
-                <li><a href="/<?php echo $name; ?>/" target="_blank">📁 <?php echo $name; ?></a></li>
-            <?php endif; ?>
+            <li><a href="/<?php echo $folder; ?>/">📁 <?php echo $folder; ?></a></li>
         <?php endforeach; ?>
     </ul>
 </main>
