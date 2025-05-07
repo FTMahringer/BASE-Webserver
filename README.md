@@ -46,8 +46,8 @@ This project sets up a **modern PHP development environment** using Docker, incl
 1️⃣ **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/FTMahringer/Base-Webserver.git
+cd BASE-Webserver
 ```
 
 2️⃣ **Create your `.env`**
@@ -65,7 +65,7 @@ PMA_HOST=mariadb
 3️⃣ **Start the stack**
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 4️⃣ **Access services**
