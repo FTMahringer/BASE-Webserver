@@ -66,7 +66,7 @@ $folders = array_filter(scandir($dir), function($item) use ($dir) {
     <h2>Available Projects</h2>
     <ul>
         <?php foreach ($folders as $folder): ?>
-            <li><a href="/<?php echo $folder; ?>/">📁 <?php echo $folder; ?></a></li>
+            <li><a href="/<?php echo $folder; ?>/public">📁 <?php echo $folder; ?></a></li>
         <?php endforeach; ?>
     </ul>
 </main>
